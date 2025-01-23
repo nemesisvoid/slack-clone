@@ -28,8 +28,8 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
 
   const { data: member, isLoading: isLoadingMember } = useGetMember({ id: memberId });
 
-  const { mutate: updateMember, isPending: isUpdatingMember } = useUpdateMember();
-  const { mutate: removeMember, isPending: isRemovingMember } = useRemoveMember();
+  const { mutate: updateMember } = useUpdateMember();
+  const { mutate: removeMember } = useRemoveMember();
 
   const [LeaveDialog, confirmLeave] = useConfirm('Leave workspace', 'Are you sure you want to leave this workspace?');
 

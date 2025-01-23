@@ -61,7 +61,6 @@ export const Message = ({
   setEditingId,
   hideThreadButton,
   threadCount,
-  threadImage,
   threadName,
   threadTimestamp,
 }: MessageProps) => {
@@ -72,7 +71,7 @@ export const Message = ({
 
   const { mutate: deleteMessage, isPending: isDeletingMessage } = useDeleteMessage();
 
-  const { mutate: toggleReaction, isPending: isTogglingReaction } = useToggleReaction();
+  const { mutate: toggleReaction } = useToggleReaction();
 
   const isPending = isUpdatingMessage;
 
