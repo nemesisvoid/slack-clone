@@ -14,7 +14,7 @@ interface WorkspaceIdLayoutProps {
   children: React.ReactNode;
 }
 const WorkspaceIdLayout = ({ children }: WorkspaceIdLayoutProps) => {
-  const { parentMessageId, onOpenProfile, profileMemberId, onClose } = usePanel();
+  const { parentMessageId, profileMemberId, onClose } = usePanel();
 
   const showPanel = !!parentMessageId || !!profileMemberId;
 
@@ -51,7 +51,7 @@ const WorkspaceIdLayout = ({ children }: WorkspaceIdLayoutProps) => {
                   />
                 ) : profileMemberId ? (
                   <Profile
-                    memberId={profileMemberId}
+                    memberId={profileMemberId as Id<'members'>}
                     onClose={onClose}
                   />
                 ) : (

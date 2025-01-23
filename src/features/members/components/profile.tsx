@@ -167,14 +167,14 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
                   <Button
                     variant='outline'
                     className='w-full capitalize'>
-                    {member.role}
+                    {member?.role}
                     <ChevronDown className='size-4 ml-2' />
                   </Button>
                 </DropdownMenuTrigger>
 
                 <DropdownMenuContent>
                   <DropdownMenuRadioGroup
-                    value={member.role}
+                    value={member?.role}
                     onValueChange={role => onUpdate(role as 'admin' | 'member')}>
                     <DropdownMenuRadioItem value='admin'>Admin</DropdownMenuRadioItem>
                     <DropdownMenuRadioItem value='member'>Member</DropdownMenuRadioItem>
